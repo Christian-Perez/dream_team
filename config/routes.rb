@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
-# temporary for testing
-  resources :rosters
+  get 'rosters/' => 'rosters#index'
+  get 'rosters/new' => 'rosters#new', as: :new_roster
+  post 'rosters/' => 'rosters#create'
+  get 'rosters/:id' => 'rosters#show', as: :roster
+  get 'rosters/:id/edit' => 'rosters#edit', as: :edit_roster
+  patch 'rosters/:id' => 'rosters#update'
+  delete 'rosters:id' => 'rosters#destroy'
 
-  # resources :teams
   get 'teams/' => 'teams#index'
   get 'teams/new' => 'teams#new', as: :new_team
   post 'teams/' => 'teams#create'
@@ -11,9 +15,6 @@ Rails.application.routes.draw do
   get 'teams/:id/edit' => 'teams#edit', as: :edit_team
   patch 'teams/:id' => 'teams#update'
   delete 'teams:id' => 'teams#destroy'
-
-
-  # resources :users
 
   get 'users' => 'users#index'
   get 'users/new' => 'users#new', as: :new_user

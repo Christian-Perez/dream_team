@@ -1,10 +1,11 @@
-
+<%= link_to 'back to index', teams_path %>
+<hr>
 <h1> <%= @team.name %> </h1>
+
+<%= image_tag @team.image %>
 
 <h2> <%= @team.tag %> </h2>
 
-<h2> <%= @team.mission %> </h2>
-
-<%= link_to 'back to index', teams_path %>
+<p> <%= @team.mission %> </p>
 <br>
 <a href="#">link for joining team, if user is logged in</a>

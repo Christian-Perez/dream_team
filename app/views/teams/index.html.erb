@@ -9,17 +9,16 @@
   <!-- <tbody> -->
     <% @teams.each do |team|%>
       <tr>
-        <td><h2> <%= team.name %> </h2></td>
-        <td><%= team.tag %></td>
 
-        <td><%= link_to 'Show', team %></td>
+        <td><h2> <%= link_to team.name, team %> </h2></td>
+        <td><%= team.tag %></td>
 
       <!-- itterator for team.users.each do |player|-->
       </tr>
 
       <% team.users.each do |user| %>
         <tr>
-          <td><%= user.name %></td>
+          <td><h3> <%= link_to user.name, user_path(user) %> </h3></td>
         </tr>
       <% end %>
       <!-- <%= "@roster.class: #{@roster.class}" %> -->

@@ -1,13 +1,21 @@
+<%= link_to 'teams index', teams_path %>
+
+<%= link_to 'edit profile', edit_user_path(@user) %>
+
 <h1> <%= @user.name %> </h1>
 
-<h2> <%= @user.image %> </h2>
+<!-- <img src="http://vignette2.wikia.nocookie.net/villains/images/f/fa/Mojo-Jojo-Photo.gif/revision/latest?cb=20121011211806" alt="Mojojojo" /> -->
+<%= image_tag @user.image %>
 
-<%= link_to 'teams index', teams_path %>
 <hr>
 <h2>Teams i own</h2>
-<ul>
-  <li>...</li>
-</ul>
+  <% %>
+  <ul>
+    <% @user_owned_teams.each do |team| %>
+    <li> ..team name.. </li>
+    <li>my role: <%= team.role %></li>
+    <% end %>
+  </ul>
 <hr>
 <h2>Teams I'm apart of:</h2>
 <% @user.teams.each do |team| %>

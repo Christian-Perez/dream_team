@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # how do i find the params for members(users)
+    @user_owned_teams = @user.rosters.where(user_id: @user) # test >> member_teams vs user_owned teams
   end
 
   def new

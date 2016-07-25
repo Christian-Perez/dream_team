@@ -9,17 +9,17 @@ User.delete_all
 Team.delete_all
 Roster.delete_all
 
-mojo = User.create({name: 'Mojo', email: 'mojojojo@email.com', password: 'password'})
-him = User.create({name: 'Him', email: 'him@email.com', password: 'password'})
-princess = User.create({name: 'princess', email: 'princess@email.com', password: 'password'})
-beatalls = Team.create({name: "The Beat-Alls", tag: 'WE BEAT ALL!', mission: 'founded to defeat the powerpuff girls'})
+mojo = User.create({name: 'Mojo', email: 'mojojojo@email.com', password: 'password', image:'http://vignette2.wikia.nocookie.net/villains/images/f/fa/Mojo-Jojo-Photo.gif/revision/latest?cb=20121011211806'})
+him = User.create({name: 'Him', email: 'him@email.com', password: 'password', image: 'http://41.media.tumblr.com/tumblr_m6y688Bo291qke3bko1_500.png'})
+princess = User.create({name: 'princess', email: 'princess@email.com', password: 'password', image: 'http://vignette2.wikia.nocookie.net/superheroes/images/4/42/Princess.jpg/revision/latest?cb=20140708015013'})
+beatalls = Team.create({name: "The Beat-Alls", tag: 'WE BEAT ALL!', mission: 'founded to defeat the powerpuff girls', image: 'http://vignette2.wikia.nocookie.net/villains/images/3/35/The_Beat-Alls.jpg/revision/latest?cb=20130908205827'})
 
 
 
-blossom = User.create({name: 'blossom', email: 'blossom@email.com', password: 'password'})
-bubbles = User.create({name: 'bubbles', email: 'bubbles@email.com', password: 'password'})
-buttercup = User.create({name: 'buttercup', email: 'buttercup@email.com', password: 'password'})
-powerpuff_girls = Team.create({name: 'powerpuff_girls', tag: 'protecting the world from the forces of evil', mission: 'we have ultra super powers'})
+blossom = User.create({name: 'blossom', email: 'blossom@email.com', password: 'password', image: 'http://vignette3.wikia.nocookie.net/powerpuff/images/2/23/Blossom-pic.png/revision/latest?cb=20130517081824'})
+bubbles = User.create({name: 'bubbles', email: 'bubbles@email.com', password: 'password', image: 'http://67.media.tumblr.com/0757ae70f5dbf3a7ea9ece4486523d6c/tumblr_inline_npr0a59Ic31slrvm0_500.jpg'})
+buttercup = User.create({name: 'buttercup', email: 'buttercup@email.com', password: 'password', image: 'http://vignette3.wikia.nocookie.net/powerpuff/images/4/4b/BUTTERCUP.jpeg.jpg/revision/latest?cb=20130602234515'})
+powerpuff_girls = Team.create({name: 'powerpuff_girls', tag: 'protecting the world from the forces of evil', mission: 'we have ultra super powers', image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwii6LfJqo_OAhVY42MKHZ5eBpQQjBwIBA&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F9%2F95%2FPowerpuff_girls_characters.jpg&psig=AFQjCNFd7X_Q0hniI5pnVb5KJjPkKEfnWg&ust=1469560758059041'})
 
 
 # roster1 = User.first.rosters.create()
