@@ -16,3 +16,7 @@
 image {
   max-width: 450px;
 }
+.user-icon {
+  width: 200px;
+  display: inline-block;
+}
