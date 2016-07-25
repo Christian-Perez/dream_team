@@ -1,28 +1,28 @@
 <table>
-  <thead>
+  <!-- <thead>
     <tr>
       <td>Name</td>
       <td>tag</td>
     </tr>
 
-  </thead>
-  <tbody>
-
-    <tr>
+  </thead> -->
+  <!-- <tbody> -->
     <% @teams.each do |team|%>
-      <td><h2> <%= team.name %> </h2></td>
-      <td><%= team.tag %></td>
+      <tr>
+        <td><h2> <%= team.name %> </h2></td>
+        <td><%= team.tag %></td>
 
-      <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Show', team %></td>
 
       <!-- itterator for team.users.each do |player|-->
       </tr>
-      <tr>
+
       <% team.users.each do |user| %>
-        user name: <%= user.name %>
+        <tr>
+          <td><%= user.name %></td>
+        </tr>
       <% end %>
       <!-- <%= "@roster.class: #{@roster.class}" %> -->
-      </tr>
     <% end %>
-  </tbody>
+  <!-- </tbody> -->
 </table>
