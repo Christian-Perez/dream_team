@@ -9,16 +9,16 @@ User.delete_all
 Team.delete_all
 Roster.delete_all
 
-mojo = User.create({name: 'Mojo', password: 'password'})
-him = User.create({name: 'Him', password: 'password'})
-princess = User.create({name: 'princess', password: 'password'})
+mojo = User.create({name: 'Mojo', email: 'mojojojo@email.com', password: 'password'})
+him = User.create({name: 'Him', email: 'him@email.com', password: 'password'})
+princess = User.create({name: 'princess', email: 'princess@email.com', password: 'password'})
 beatalls = Team.create({name: "The Beat-Alls", tag: 'WE BEAT ALL!', mission: 'founded to defeat the powerpuff girls'})
 
 
 
-blossom = User.create({name: 'blossom', password: 'password'})
-bubbles = User.create({name: 'bubbles', password: 'password'})
-buttercup = User.create({name: 'buttercup', password: 'password'})
+blossom = User.create({name: 'blossom', email: 'blossom@email.com', password: 'password'})
+bubbles = User.create({name: 'bubbles', email: 'bubbles@email.com', password: 'password'})
+buttercup = User.create({name: 'buttercup', email: 'buttercup@email.com', password: 'password'})
 powerpuff_girls = Team.create({name: 'powerpuff_girls', tag: 'protecting the world from the forces of evil', mission: 'we have ultra super powers'})
 
 
