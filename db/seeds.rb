@@ -9,18 +9,27 @@ User.delete_all
 Team.delete_all
 Roster.delete_all
 
-user1 = User.create({name: 'Mojo', password: 'password'})
-user2 = User.create({name: 'Him', password: 'password'})
-user3 = User.create({name: 'princess', password: 'password'})
-team1 = Team.create({name: "The Beat-Alls", tag: 'WE BEAT ALL!', mission: 'founded to defeat the powerpuff girls'})
+mojo = User.create({name: 'Mojo', password: 'password'})
+him = User.create({name: 'Him', password: 'password'})
+princess = User.create({name: 'princess', password: 'password'})
+beatalls = Team.create({name: "The Beat-Alls", tag: 'WE BEAT ALL!', mission: 'founded to defeat the powerpuff girls'})
 
-user4 = User.create({name: 'player1', password: 'password'})
-user5 = User.create({name: 'player2', password: 'password'})
-team2 = Team.create({name: 'gamers', tag: 'first person shooters', mission: 'defeat the enemy team'})
+
+
+blossom = User.create({name: 'blossom', password: 'password'})
+bubbles = User.create({name: 'bubbles', password: 'password'})
+buttercup = User.create({name: 'buttercup', password: 'password'})
+powerpuff_girls = Team.create({name: 'powerpuff_girls', tag: 'protecting the world from the forces of evil', mission: 'we have ultra super powers'})
 
 
 # roster1 = User.first.rosters.create()
 # Team.first.rosters << roster1
-Roster.create({team: team1, user: user1, role: 'laser turret', is_owner: true})
+Roster.create({team: beatalls, user: mojo, role: 'laser turret', is_owner: true})
+Roster.create({team: beatalls, user: him, role: 'evil power', is_owner: false})
+Roster.create({team: beatalls, user: princess, role: 'cold hard cash', is_owner: false})
+
+Roster.create({team: powerpuff_girls, user: blossom, role: 'commander and leader', is_owner: true})
+Roster.create({team: powerpuff_girls, user: bubbles, role: 'joy and laughter', is_owner: false})
+Roster.create({team: powerpuff_girls, user: buttercup, role: 'toughest fighter', is_owner: false})
 # Roster.create({team: 1, user: 2, role: 'evil magic', is_owner: false})
 # Roster.create({team: 1, user: 3, role: 'cold, hard cash', is_owner: false})
