@@ -19,8 +19,10 @@ beatalls = Team.create({name: "The Beat-Alls", tag: 'WE BEAT ALL!', mission: 'fo
 blossom = User.create({name: 'blossom', email: 'blossom@email.com', password: 'password', image: 'http://vignette3.wikia.nocookie.net/powerpuff/images/2/23/Blossom-pic.png/revision/latest?cb=20130517081824'})
 bubbles = User.create({name: 'bubbles', email: 'bubbles@email.com', password: 'password', image: 'http://67.media.tumblr.com/0757ae70f5dbf3a7ea9ece4486523d6c/tumblr_inline_npr0a59Ic31slrvm0_500.jpg'})
 buttercup = User.create({name: 'buttercup', email: 'buttercup@email.com', password: 'password', image: 'http://vignette3.wikia.nocookie.net/powerpuff/images/4/4b/BUTTERCUP.jpeg.jpg/revision/latest?cb=20130602234515'})
-powerpuff_girls = Team.create({name: 'powerpuff_girls', tag: 'fighting crime and the forces of evil', mission: 'we have ultra super powers', image: 'https://upload.wikimedia.org/wikipedia/en/9/95/Powerpuff_girls_characters.jpg'})
+powerpuff_girls = Team.create({name: 'powerpuff girls', tag: 'fighting crime and the forces of evil', mission: 'we have ultra super powers', image: 'https://upload.wikimedia.org/wikipedia/en/9/95/Powerpuff_girls_characters.jpg'})
 
+third_team = Team.create({name: 'third team', tag: 'hufflepuffs', mission: 'to be average'})
+Roster.create({team: third_team, user: mojo, role: '9 to 5'})
 
 # roster1 = User.first.rosters.create()
 # Team.first.rosters << roster1

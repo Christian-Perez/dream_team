@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'teams#index'
+  root 'visitors#index'
 
   get 'rosters/' => 'rosters#index'
   get 'rosters/new' => 'rosters#new', as: :new_roster
