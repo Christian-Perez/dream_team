@@ -20,3 +20,12 @@ image {
   width: 200px;
   display: inline-block;
 }
+
+.team-icon {
+  width: 250px;
+  display: inline;
+  /*display: block;*/
+}
+.team-index-container {
+  display: block;
+}

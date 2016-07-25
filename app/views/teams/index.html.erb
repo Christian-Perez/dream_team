@@ -1,27 +1,17 @@
-<table>
-  <!-- <thead>
-    <tr>
-      <td>Name</td>
-      <td>tag</td>
-    </tr>
 
-  </thead> -->
-  <!-- <tbody> -->
-    <% @teams.each do |team|%>
-      <tr>
+  <% @teams.each do |team| %>
+  <div class="team-index-container">
+    <%= image_tag team.image, class: 'team-icon' %>
+    <span> <%= link_to team.name, team %> </span>
+    <p><%= team.tag %></p>
+    <hr>
 
-        <td><h2> <%= link_to team.name, team %> </h2></td>
-        <td><%= team.tag %></td>
+    <!-- itterator for team.users.each do |player|-->
 
-      <!-- itterator for team.users.each do |player|-->
-      </tr>
-
-      <% team.users.each do |user| %>
-        <tr>
-          <td><h3> <%= link_to user.name, user_path(user) %> </h3></td>
-        </tr>
-      <% end %>
-      <!-- <%= "@roster.class: #{@roster.class}" %> -->
-    <% end %>
-  <!-- </tbody> -->
-</table>
+    <!-- <% team.users.each do |user| %>
+      <h3> <%= link_to user.name, user_path(user) %> </h3>
+      <%= image_tag user.image, class: 'user-icon' %>
+    <% end %> -->
+    <!-- <%= "@roster.class: #{@roster.class}" %> -->
+  <% end %>
+  </div>
