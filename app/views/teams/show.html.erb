@@ -13,14 +13,15 @@
   <a href='<%= user_path(user) %>'><%= image_tag user.image, class: 'user-icon'%></a>
 <% end %>
 <hr>
-<!-- user >> join/leave team (roster) -->
-<!-- owner >> edit/kick_out/delete -->
- <%#= link_to 'join', new_roster_path %>
 
-<%= form_for @roster, :url => join_team_path, :html => { :method => :post} do |f|%>
-  <%= f.hidden_field :team_id, :value => @team.id %>
-  <%= f.hidden_field :is_owner, :value => false %>
-  <%= f.submit 'join' %>
+<% if !@team.users.where(id: current_user) %>
+  <%= form_for @roster, :url => join_team_path, :html => { :method => :post} do |f| %>
+    <%= f.hidden_field :team_id, :value => @team.id %>
+    <%= f.hidden_field :is_owner, :value => false %>
+    <%= f.submit 'join' %>
+  <% end %>
+<% else %>
+
 <% end %>
 
-<%= @team.rosters.find_by(is_owner: true).user.name %>
+owner: <%= @team.rosters.find_by(is_owner: true).user.name %>

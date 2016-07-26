@@ -8,7 +8,6 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     @roster = Roster.new
-    # how do i find the params for members(users)
   end
 
   def new
