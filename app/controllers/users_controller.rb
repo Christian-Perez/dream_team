@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def show
     # @user = current_user.id
     @user = current_user
-    # @user_teams = current_user.rosters.where(user_id: @user.id) # test >> member_teams vs user_owned teams
+    @user_teams = current_user.rosters.where() # test >> member_teams vs user_owned teams
     # @user_owned_teams = @user_teams.where(is_owner: true)
     # && is_owner: true
   end
