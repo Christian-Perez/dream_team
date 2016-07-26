@@ -1,4 +1,6 @@
-
+<%= link_to 'my profile', user_path(current_user.id) %>
+<h1>Teams Roster</h1>
+<hr>
   <% @teams.each do |team| %>
   <div class="team-index-container">
     <%= image_tag team.image, class: 'team-icon' %>
@@ -13,5 +15,6 @@
       <%= image_tag user.image, class: 'user-icon' %>
     <% end %> -->
     <!-- <%= "@roster.class: #{@roster.class}" %> -->
+
   <% end %>
   </div>

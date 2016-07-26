@@ -11,11 +11,14 @@
   <%= link_to current_user.teams.find_by(id: roster.team_id).name, team_path(roster.team_id) %>
   </li>
 <% end %>
+  <li>
+    <%= link_to 'create new team', new_team_path %>
+  </li>
 </ul>
 
 <hr>
 
-<h2>Teams I've joined':</h2>
+<h2>Teams I've joined</h2>
 
   <!-- <% current_user.rosters.where(user: current_user).each do |team| %>
     <%= team.team_id %>

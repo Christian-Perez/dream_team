@@ -1,4 +1,5 @@
 <%= link_to 'back to index', teams_path %>
+<%= link_to 'my profile', user_path(current_user) %>
 <hr>
 <h1> <%= @team.name %> </h1>
 <div class="team-icon">
@@ -9,9 +10,8 @@
 <p> <%= @team.mission %> </p>
 <hr />
 <% @team.users.each do |user| %>
-  <!-- <td><h3> <%= link_to user.name, user_path(user) %> </h3></td> -->
   <a href='<%= user_path(user) %>'><%= image_tag user.image, class: 'user-icon'%></a>
-
 <% end %>
+
 <hr />
 <a href="#">link for joining team, if user is logged in</a>

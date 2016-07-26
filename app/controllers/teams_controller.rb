@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
     @teams = Team.all
   end
@@ -14,8 +16,10 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
+
     if @team.update_attributes(team_params)
-      redirect_to teams_path
+      Roster.create(team_id: @team.id, user_id: current_user.id, is_owner: true)
+      redirect_to user_path(current_user)
     else
       render :edit
     end
