@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     @roster = Roster.new
+    # @roster = Roster.find_by(user_id: current_user.id)
   end
 
   def new
@@ -56,6 +57,11 @@ class TeamsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def leave_team
+    @team = Team.find(params[:id])
+    @roster = @team.rosters.where(user_id: current_user.id)
   end
 
   private

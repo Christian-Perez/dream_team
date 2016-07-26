@@ -33,7 +33,5 @@ Roster.create({team: team_up, user: blossom, role: 'all the heavy lifting', is_o
 Roster.create({team: team_up, user: bubbles, role: 'all the heavy lifting', is_owner: false})
 Roster.create({team: team_up, user: buttercup, role: 'all the heavy lifting', is_owner: false})
 
-Roster.create({team: team_up, user: mojo, role: 'out-evil Him', is_owner: true})
-
 # Roster.create({team: 1, user: 2, role: 'evil magic', is_owner: false})
 # Roster.create({team: 1, user: 3, role: 'cold, hard cash', is_owner: false})
