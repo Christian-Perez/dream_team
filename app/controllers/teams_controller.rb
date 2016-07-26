@@ -7,6 +7,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    @roster = Roster.new
     # how do i find the params for members(users)
   end
 
@@ -45,6 +46,17 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @team.destroy
     redirect_to teams_path
+  end
+# create default for is_owner (false)
+  def join_team
+    @team = Team.find(params[:id])
+    @roster = @team.rosters.new(params.require(:roster).permit(:is_owner, :user_id, :team_id))
+    @roster.user = current_user
+    if @roster.save
+      redirect_to teams_path(@team)
+    else
+      redirect_to root_path
+    end
   end
 
   private

@@ -1,7 +1,7 @@
 <%= link_to 'teams index', teams_path %>
 
-<h1> <%= @user.name %> </h1>
-<%= image_tag @user.image %>
+<h1> <%= current_user.name %> </h1>
+<%= image_tag current_user.image %>
 <hr>
 
 <h2>Teams i own</h2>

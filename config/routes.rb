@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'rosters/' => 'rosters#index'
+  # get 'rosters/' => 'rosters#index'
   get 'rosters/new' => 'rosters#new', as: :new_roster
   post 'rosters/' => 'rosters#create'
-  get 'rosters/:id' => 'rosters#show', as: :roster
+  post 'rosters/' => 'teams#join_team', as: :join_team
+  # get 'rosters/:id' => 'rosters#show', as: :roster
   get 'rosters/:id/edit' => 'rosters#edit', as: :edit_roster
   patch 'rosters/:id' => 'rosters#update'
   delete 'rosters:id' => 'rosters#destroy'
@@ -16,6 +17,9 @@ Rails.application.routes.draw do
   get 'teams/new' => 'teams#new', as: :new_team
   post 'teams/' => 'teams#create'
   get 'teams/:id' => 'teams#show', as: :team
+
+  # get 'teams/:id/join' => 'teams#join', as: :join_team
+
   get 'teams/:id/edit' => 'teams#edit', as: :edit_team
   patch 'teams/:id' => 'teams#update'
   delete 'teams:id' => 'teams#destroy'

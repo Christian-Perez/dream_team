@@ -8,10 +8,19 @@
 <h2> <%= @team.tag %> </h2>
 
 <p> <%= @team.mission %> </p>
-<hr />
+<hr>
 <% @team.users.each do |user| %>
   <a href='<%= user_path(user) %>'><%= image_tag user.image, class: 'user-icon'%></a>
 <% end %>
+<hr>
+<!-- user >> join/leave team (roster) -->
+<!-- owner >> edit/kick_out/delete -->
+ <%#= link_to 'join', new_roster_path %>
 
-<hr />
-<a href="#">link for joining team, if user is logged in</a>
+<%= form_for @roster, :url => join_team_path, :html => { :method => :post} do |f|%>
+  <%= f.hidden_field :team_id, :value => @team.id %>
+  <%= f.hidden_field :is_owner, :value => false %>
+  <%= f.submit 'join' %>
+<% end %>
+
+<%= @team.rosters.find_by(is_owner: true).user.name %>
