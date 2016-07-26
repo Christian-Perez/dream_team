@@ -1,7 +1,5 @@
 <%= link_to 'teams index', teams_path %>
 
-<%= link_to 'edit profile', edit_user_path(@user) %>
-
 <h1> <%= @user.name %> </h1>
 <%= image_tag @user.image %>
 <hr>
@@ -17,7 +15,7 @@
 
 <hr>
 
-<h2>Teams I'm a part of:</h2>
+<h2>Teams I've joined':</h2>
 
   <!-- <% current_user.rosters.where(user: current_user).each do |team| %>
     <%= team.team_id %>

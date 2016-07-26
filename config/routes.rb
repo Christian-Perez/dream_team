@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-
   root 'visitors#index'
+
+  devise_for :users
 
   get 'rosters/' => 'rosters#index'
   get 'rosters/new' => 'rosters#new', as: :new_roster
@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   # get 'users/new' => 'users#new', as: :new_user
   # post 'users/' => 'users#create'
   get 'users/:id' => 'users#show', as: :user
-  get 'users/:id/edit' => 'users#edit', as: :edit_user # BREAKS EDIT LINK >> MERGE WITH EDIT-PROFILE & EDIT-USER PAGES
-  patch 'users/:id' => 'users#update'
+  # get 'users/:id/edit' => 'users#edit', as: :edit_user # BREAKS EDIT LINK >> MERGE WITH EDIT-PROFILE & EDIT-USER PAGES
+  # patch 'users/:id' => 'users#update'
   # delete 'users/:id' => 'users#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def show
     # @user = current_user.id
     @user = current_user
-    @user_teams = current_user.rosters.where() # test >> member_teams vs user_owned teams
+    # @user_teams = current_user.rosters.where() # test >> member_teams vs user_owned teams
     # @user_owned_teams = @user_teams.where(is_owner: true)
     # && is_owner: true
   end
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+    redirect_to users_path, confirm: "are you sure you want to delete this user"
   end
 
   private
