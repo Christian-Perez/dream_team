@@ -1,16 +1,16 @@
 <%= link_to 'back to index', teams_path %>
 <hr>
 <h1> <%= @team.name %> </h1>
-
-<%= image_tag @team.image %>
-
+<div class="team-icon">
+  <%= image_tag @team.image %>
+</div>
 <h2> <%= @team.tag %> </h2>
 
 <p> <%= @team.mission %> </p>
 <hr />
 <% @team.users.each do |user| %>
-    <!-- <td><h3> <%= link_to user.name, user_path(user) %> </h3></td> -->
-    <a href='<%= user_path(user) %>'><%= image_tag user.image, class: 'user-icon'%></a>
+  <!-- <td><h3> <%= link_to user.name, user_path(user) %> </h3></td> -->
+  <a href='<%= user_path(user) %>'><%= image_tag user.image, class: 'user-icon'%></a>
 
 <% end %>
 <hr />
