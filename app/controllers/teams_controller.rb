@@ -50,11 +50,11 @@ class TeamsController < ApplicationController
   end
 # create default for is_owner (false)
   def join_team
-    @team = Team.find(params[:id])
+    @team = Team.find(params[:team_id])
     @roster = @team.rosters.new(params.require(:roster).permit(:is_owner, :user_id, :team_id))
     @roster.user = current_user
     if @roster.save
-      redirect_to teams_path(@team)
+      redirect_to team_path(@team)
     else
       redirect_to root_path
     end

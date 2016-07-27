@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   # get 'rosters/new' => 'rosters#new', as: :new_roster
   # post 'rosters/' => 'rosters#create'
 
-  # post '/teams/:team_id/' => 'teams#join_team', as: :join_team
-  
+  post '/teams/:team_id/' => 'teams#join_team', as: :join_team
+
   # # get 'rosters/:id' => 'rosters#show', as: :roster
   # get 'rosters/:id/edit' => 'rosters#edit', as: :edit_roster
   # patch 'rosters/:id' => 'rosters#update'
