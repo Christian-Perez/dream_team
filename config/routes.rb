@@ -8,13 +8,15 @@ Rails.application.routes.draw do
     resources :rosters
   end
 
+
+
   # get 'rosters/' => 'rosters#index'
   # get 'rosters/new' => 'rosters#new', as: :new_roster
   # post 'rosters/' => 'rosters#create'
 
   post '/teams/:team_id/' => 'teams#join_team', as: :join_team
   get '/teams/:id/change_owner' => 'teams#change_owner', as: :change_owner
-
+  patch '/roster/:id' => 'rosters#update_roster', as: :update_roster
   # # get 'rosters/:id' => 'rosters#show', as: :roster
   # get 'rosters/:id/edit' => 'rosters#edit', as: :edit_roster
   # patch 'rosters/:id' => 'rosters#update'

@@ -29,7 +29,6 @@ class TeamsController < ApplicationController
 
   def edit
     @team = Team.find(params[:id])
-
     @roster_entries = @team.rosters
   end
 
@@ -40,7 +39,6 @@ class TeamsController < ApplicationController
     else
       render :edit
     end #if block
-
   end
 
   def destroy
@@ -52,7 +50,7 @@ class TeamsController < ApplicationController
     @team.destroy
     redirect_to teams_path
   end
-# create default for is_owner (false)
+  # create default for is_owner (false)
   def join_team
     @team = Team.find(params[:team_id])
     @roster = @team.rosters.new(params.require(:roster).permit(:is_owner, :user_id, :team_id))
@@ -71,6 +69,11 @@ class TeamsController < ApplicationController
 
   def change_owner
     @team = Team.find(params[:id])
+    @rosters = @team.rosters
+    @members = []
+    @old_owner_roster_entry = @team.rosters.find_by(is_owner: true).user.name
+    # @new_owner_roster_entry =  .user.name
+
   end
 
   private

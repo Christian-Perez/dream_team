@@ -1,5 +1,5 @@
 class RostersController < ApplicationController
-   before_action :set_team
+   before_action :set_team, except: [:update_roster] 
 
    def show
     #  @roster = Roster.find(params[:id])
@@ -24,6 +24,18 @@ class RostersController < ApplicationController
   #   else
   #     render :edit
   #   end
+  end
+
+  def update_roster
+    @new_roster = Roster.find(params[:id])
+    @team = @new_roster.team
+    @old_roster = @team.rosters.where(is_owner: true).first
+    @old_roster.update(is_owner: false)
+    @new_roster.update(is_owner: true)
+    if @new_roster.save && @old_roster.save
+      redirect_to team_path(@team)
+    end
+
   end
 
   def destroy

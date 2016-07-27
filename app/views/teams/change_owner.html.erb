@@ -12,13 +12,14 @@ old_owner: <%= @old_owner_roster_entry.user.name %> <!-- is_owner >> false -->
 new_owner: <%#= @new_owner_roster_entry.user.name %> <!-- is_owner >> true -->
 
 <hr>
-<% @team.users.each do |user| %>
+<% @rosters.each do |roster| %>
   <!-- if is NOT the owner -->
-  <% if !( user.id == @team.rosters.find_by(is_owner: true).user.id ) %>
-    <%= user.name %>
+  <% if !( roster.user.id == @team.rosters.find_by(is_owner: true).user.id ) %>
+    <%= roster.user.name %>
     <br>
-    <%= image_tag user.image, class: 'user-icon'%>
+    <%= image_tag roster.user.image, class: 'roster.user-icon'%>
     <br>
-    <% @members.push(user) %>
+    <%= link_to 'change to', update_roster_path(roster), method: :patch %>
+    <% @members.push(roster.user) %>
   <% end %>
 <% end %>
