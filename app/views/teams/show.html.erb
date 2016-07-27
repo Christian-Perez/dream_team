@@ -15,15 +15,20 @@
 <hr>
 
 <% if @team.users.where(id: current_user).count == 0 %>
-  <%= form_for @roster, :url => join_team_path, :html => { :method => :post} do |f| %>
-    <%= f.hidden_field :team_id, :value => @team.id %>
-    <%= f.hidden_field :is_owner, :value => false %>
-    <%= f.submit 'join' %>
-  <% end %>
+  user is not on team
+  <%#= form_for @roster, :url => join_team_path, :html => { :method => :post} do |f| %>
+    <%#= f.hidden_field :team_id, :value => @team.id %>
+    <%#= f.hidden_field :is_owner, :value => false %>
+    <%#= f.submit 'join' %>
+  <%# end %>
 <% else %>
-  leave team
+  user is on team
+  <%= link_to "leave team", team_roster_path(@team, @my_roster), method: :delete, data: { confirm: "You sure?" } %>
+  roster: <%= @team.class %>
+  <br>
+  my_roster: <%= @my_roster.class %>
 <% end %>
 
 <hr>
 
-owner: <%= @team.rosters.find_by(is_owner: true).user.name %>
+owner: <%#= @team.rosters.find_by(is_owner: true).user.name %>

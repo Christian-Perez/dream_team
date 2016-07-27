@@ -1,4 +1,11 @@
 class RostersController < ApplicationController
+   before_action :set_team
+
+   def show
+    #  @roster = Roster.find(params[:id])
+    @team = Team.find(params[:id])
+    @my_roster = @team.rosters.find_by(user_id: current_user)
+   end
 
   def create
     @roster = Roster.new(roster_params)
@@ -19,9 +26,24 @@ class RostersController < ApplicationController
   #   end
   end
 
+  def destroy
+    # @team = Team.find_by() #find where user_id = current_user
+    # @roster = Roster.find_by(user_id: current_user)
+    # @roster = Roster.find(params[:id])
+    @my_roster = @team.rosters.find_by(user_id: current_user)
+    #delete roster
+    @my_roster.destroy
+    # redirect_to teams_path
+    redirect_to :back
+  end
+
 private
 def roster_params
   params.require(:roster).permit(:team_id, :user_id, :is_owner)
+end
+
+def set_team
+  @team = Team.find(params[:team_id])
 end
 
   # def new
