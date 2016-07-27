@@ -49,11 +49,6 @@ class TeamsController < ApplicationController
     @roster_entries.each do |entry|
       entry.destroy
     end
-
-    # @teams.each do |team|
-    #   team.destroy
-    # end
-
     @team.destroy
     redirect_to teams_path
   end
