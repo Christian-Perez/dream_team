@@ -1,9 +1,12 @@
 <h2>Owner Options</h2>
 <%= render 'form' %>
 <hr>
-change owner
-<%= link_to 'change owner', change_owner_path %>
+<%= link_to 'change owner', change_owner_path %>broken
 <br>
-delete team
-<%#= link_to 'delete team', @team, method: :delete, data: { confirm: 'are you sure you want to delete this team?' } %>
-<br>
+<%= link_to 'delete team', @team, method: :delete, data: { confirm: 'are you sure you want to delete this team?' } %>broken
+<hr>
+<!-- find rosters where team_id == @team.id -->
+<% @roster_entries.each do |entry| %>
+  <%= entry.user.name %>
+<% end %>
+<hr>

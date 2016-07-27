@@ -6,6 +6,7 @@
   <%= image_tag @team.image %>
 </div>
 <h2> <%= @team.tag %> </h2>
+<h3><strong>owner: </strong><%= @team.rosters.find_by(is_owner: true).user.name %></h3>
 
 <p> <%= @team.mission %> </p>
 <hr>
@@ -29,7 +30,6 @@
   <%= link_to 'Team Owner Options', edit_team_path %>
 <% end %>
 <br>
-<% if @team.rosters.find_by(is_owner: true).user == current_user %>
+<%# if @team.rosters.find_by(is_owner: true).user == current_user %>
 
-<% end %>
-<!-- owner: <%#= @team.rosters.find_by(is_owner: true).user.name %> -->
+<%# end %>

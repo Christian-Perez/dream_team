@@ -27,11 +27,7 @@ class RostersController < ApplicationController
   end
 
   def destroy
-    # @team = Team.find_by() #find where user_id = current_user
-    # @roster = Roster.find_by(user_id: current_user)
-    # @roster = Roster.find(params[:id])
     @my_roster = @team.rosters.find_by(user_id: current_user)
-    #delete roster
     @my_roster.destroy
     # redirect_to teams_path
     redirect_to :back

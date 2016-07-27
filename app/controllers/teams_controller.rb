@@ -29,22 +29,31 @@ class TeamsController < ApplicationController
 
   def edit
     @team = Team.find(params[:id])
+
+    @roster_entries = @team.rosters
   end
 
   def update
-
     @team = Team.find(params[:id])
-
-  if @team.update_attributes(team_params)
-    redirect_to team_path
-  else
-    render :edit
-  end #if block
+    if @team.update_attributes(team_params)
+      redirect_to team_path
+    else
+      render :edit
+    end #if block
 
   end
 
   def destroy
     @team = Team.find(params[:id])
+    @roster_entries = @team.rosters
+    @roster_entries.each do |entry|
+      entry.destroy
+    end
+
+    # @teams.each do |team|
+    #   team.destroy
+    # end
+
     @team.destroy
     redirect_to teams_path
   end
