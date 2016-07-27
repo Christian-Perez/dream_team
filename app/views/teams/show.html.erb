@@ -13,25 +13,23 @@
   <a href='<%= user_path(user) %>'><%= image_tag user.image, class: 'user-icon'%></a>
 <% end %>
 <hr>
-
- <!-- join/leave -->
+<!-- join / leave / change owner -->
 <% if @team.users.where(id: current_user).count == 0 %>
+  <!-- not owner >> can join team -->
   <%= form_for @roster, :url => join_team_path(@team), :html => { :method => :post} do |f| %>
     <%= f.hidden_field :team_id, :value => @team.id %>
     <%= f.hidden_field :is_owner, :value => false %>
     <%= f.submit 'join' %>
   <% end %>
-<% else %>
+<% elsif !(@team.rosters.find_by(is_owner: true).user == current_user) %>
+  <!-- not owner >> can leave team -->
   <%= link_to 'leave team', team_roster_path(@team, @my_roster), method: :delete, data: { confirm: 'You sure?' } %>
-<% end %>
-<hr>
-
-<% if @team.rosters.find_by(is_owner: true).user == current_user %>
-  user is owner
-  <%#= link_to 'delete team', @team, method: :delete, data: { confirm: 'are you sure you want to delete this team?' } %>
-  <br>
-  <%= link_to 'edit team', edit_team_path %>
 <% else %>
-  user is not owner
+  <!-- is OWNER >> can EDIT >> CHANGE_OWNER + DELETE -->
+  <%= link_to 'Team Owner Options', edit_team_path %>
+<% end %>
+<br>
+<% if @team.rosters.find_by(is_owner: true).user == current_user %>
+
 <% end %>
 <!-- owner: <%#= @team.rosters.find_by(is_owner: true).user.name %> -->

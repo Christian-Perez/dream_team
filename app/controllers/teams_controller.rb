@@ -61,13 +61,12 @@ class TeamsController < ApplicationController
   end
 
   def leave_team
-    # user = User.find_by(name: 'David')
-    # user.destroy
     @team = Team.find(params[:id]) # the current team that the user wants to leave
     @roster = @team.rosters.find_each(user_id: current_user) # the roster representing the user's membership in the team
-    # @roster.destroy
-    # @roster = @team.rosters.find_by(user_id: current_user).user_id
+  end
 
+  def change_owner
+    @team = Team.find(params[:id])
   end
 
   private

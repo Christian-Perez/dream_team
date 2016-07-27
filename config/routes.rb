@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # post 'rosters/' => 'rosters#create'
 
   post '/teams/:team_id/' => 'teams#join_team', as: :join_team
+  get '/teams/:id/change_owner' => 'teams#change_owner', as: :change_owner
 
   # # get 'rosters/:id' => 'rosters#show', as: :roster
   # get 'rosters/:id/edit' => 'rosters#edit', as: :edit_roster

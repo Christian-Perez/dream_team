@@ -1,3 +1,5 @@
+<%= link_to 'back to index', teams_path %>
+<br>
 <%= form_for(@team) do |f| %>
   <div class="field">
     <%= f.label :name %><br>
@@ -19,5 +21,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-<%= link_to 'back to index', teams_path %>

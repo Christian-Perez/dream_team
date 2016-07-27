@@ -1,0 +1,10 @@
+change owner page
+
+<hr>
+
+<% @team.users.each do |user| %>
+  <!-- if is NOT the owner -->
+  <% if !( user.id == @team.rosters.find_by(is_owner: true).user.id ) %>
+    <%= image_tag user.image, class: 'user-icon'%>
+  <% end %>
+<% end %>
