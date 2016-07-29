@@ -24,3 +24,11 @@ Things To Do:
  * hide create new team on user profiles that don't belong to the current_user
  * refactor styling
  * refactor working code
+ * 
+ 
+![wireframe 1](http://res.cloudinary.com/mrbrd/image/upload/v1469202018/Screenshot_2016-07-22_08.38.37_knmxjb.png)
+
+![wireframe 1](blob:https%3A//mail.google.com/3f71b39f-9029-4665-876f-675f4bebc3ba)
+![wireframe 2](blob:https%3A//mail.google.com/cbbf8839-5431-4aac-bb03-0698a84dd1b3)
+
+
