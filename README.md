@@ -26,9 +26,9 @@ Things To Do:
  * refactor working code
  * 
  
-![wireframe 1](http://res.cloudinary.com/mrbrd/image/upload/v1469202018/Screenshot_2016-07-22_08.38.37_knmxjb.png)
+![erd](http://res.cloudinary.com/mrbrd/image/upload/v1469202018/Screenshot_2016-07-22_08.38.37_knmxjb.png)
 
-![wireframe 1](blob:https%3A//mail.google.com/3f71b39f-9029-4665-876f-675f4bebc3ba)
-![wireframe 2](blob:https%3A//mail.google.com/cbbf8839-5431-4aac-bb03-0698a84dd1b3)
+![wireframe 1](http://res.cloudinary.com/mrbrd/image/upload/v1469166752/IMG_20160721_175720_sh4ltz.jpg)
+![wireframe 2](http://res.cloudinary.com/mrbrd/image/upload/v1469202970/IMG_20160722_085025_hfeqbi.jpg)
 
 
